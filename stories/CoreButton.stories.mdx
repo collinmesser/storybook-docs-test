@@ -1,0 +1,33 @@
+import { Story, Preview, Meta, Props } from "@storybook/addon-docs/blocks";
+import { CoreButton } from "simple-vue-export";
+
+<Meta title="Core/CoreButton" component={CoreButton} />
+
+export const Template = (args, { argTypes }) => ({
+  components: { CoreButton },
+  props: Object.keys(argTypes),
+  template: '<CoreButton :value="value" :type="type" />',
+});
+
+## Button
+
+<Story id="core-corebutton--primary" inline={true} />
+
+### Props, Events, and Slots
+
+<Props story="primary" />
+
+
+<Preview>
+  <Story
+    name="primary"
+    args={{
+      value: "Download file",
+      type: "primary",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={CoreButton} />

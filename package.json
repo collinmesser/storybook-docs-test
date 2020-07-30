@@ -1,24 +1,35 @@
 {
   "name": "storybook-docs-test",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "simple-vue-export": "file:../simple-vue-export",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@storybook/addon-actions": "^6.0.0-rc.18",
+    "@storybook/addon-docs": "^6.0.0-rc.18",
+    "@storybook/addon-links": "^6.0.0-rc.18",
+    "@storybook/addons": "^6.0.0-rc.18",
+    "@storybook/vue": "^6.0.0-rc.18",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-vue": "^2.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "simple-vue-export": "^0.2.2",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -33,10 +44,7 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {
-      "no-undef": "warn",
-      "no-unused-vars": "warn"
-    }
+    "rules": {}
   },
   "browserslist": [
     "> 1%",

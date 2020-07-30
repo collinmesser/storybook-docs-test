@@ -1,0 +1,28 @@
+// This is a custom babel config for storybook. Jest and Storyshots (snapshot testing) need to have JSX to work properly. Storybook currently does not support JSX in Vue when using the MDX docs. Hopefully this will be fixed with the Storybook 6.0.0 stable release.
+{
+  "presets": [
+    [
+      "@vue/app",
+      {
+        /* Disabled due to clash with Storybook MDX */
+        "jsx": false
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["require-context-hook"],
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": {
+              // Tell babel-preset-env to target the current Node version we're using. This skips transpiling unnecessary features and makes our tests much faster.
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
